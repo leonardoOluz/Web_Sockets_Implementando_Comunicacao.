@@ -1,0 +1,16 @@
+/* Importando bibliotecas e frameworks de desenvolvimento  */
+import express from "express";
+import url from 'url';
+import path from "path";
+/* Variáveis*/
+const app = express();
+const port = process.env.PORT || 3000
+const caminhoAtual = url.fileURLToPath(import.meta.url);
+const diretorioPublico = path.join(caminhoAtual, '../..', 'public');
+
+/* Passando o uso do express.static para app.use identificar a pasta public com os html */
+app.use(express.static(diretorioPublico));
+
+app.listen(port, ()=> {
+    console.log(`escuntando servidor na porta http://localhost:${port}`)
+})

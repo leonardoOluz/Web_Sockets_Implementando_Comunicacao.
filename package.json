@@ -1,12 +1,19 @@
 {
   "name": "websockets_node_js",
   "version": "1.0.0",
-  "description": "",
+  "description": "websockets_node_js",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/servidor.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Leonardo Luz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "socket.io": "^4.5.4"
+  }
 }
