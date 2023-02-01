@@ -9,7 +9,6 @@ const textoEditor = document.getElementById('editor-texto');
 tituloDocumento.textContent = nomeDocumento || `Documento sem título`;
 selecionarDocumento(nomeDocumento);
 
-
 textoEditor.addEventListener('keyup', () => {
     emitirTextoEditor({
         texto: textoEditor.value,
