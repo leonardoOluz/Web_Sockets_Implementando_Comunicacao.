@@ -8,8 +8,8 @@ function selecionarDocumento(nome){
 }
 
 /* Funções */
-function emitirTextoEditor(texto) {
-    socket.emit('texto_editor', texto);
+function emitirTextoEditor(dados) {
+    socket.emit('texto_editor', dados);
 }
 /* Metodo socket.on */
 socket.on('texto_editor_clientes', (texto) => {

@@ -11,11 +11,14 @@ selecionarDocumento(nomeDocumento);
 
 
 textoEditor.addEventListener('keyup', () => {
-    emitirTextoEditor(textoEditor.value)
+    emitirTextoEditor({
+        texto: textoEditor.value,
+        nomeDocumento
+    })
 })
 
-function atualizaTextoEditor(texto){
+function atualizaTextoEditor(texto) {
     textoEditor.value = texto;
 }
 
-export {atualizaTextoEditor};
+export { atualizaTextoEditor };
