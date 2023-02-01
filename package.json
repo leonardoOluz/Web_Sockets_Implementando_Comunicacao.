@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/servidor.js"
+    "start": "nodemon ./src/socket-back.js"
   },
   "keywords": [],
   "author": "Leonardo Luz",
