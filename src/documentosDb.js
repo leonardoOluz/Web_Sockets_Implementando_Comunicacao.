@@ -22,4 +22,11 @@ function obterDocumentos(){
     const documentos = documentoColecao.find().toArray();
     return documentos;
 }
-export { encontrarDocumento, atualizaDocumento, obterDocumentos };
+function adicionarDocumento(nome){
+    const resultado = documentoColecao.insertOne({
+        nome,
+        texto: `texto de ${nome} ...`
+    })
+    return resultado;
+}
+export { encontrarDocumento, atualizaDocumento, obterDocumentos, adicionarDocumento};
