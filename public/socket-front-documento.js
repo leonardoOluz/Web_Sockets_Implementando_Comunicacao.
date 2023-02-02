@@ -1,5 +1,5 @@
 /* Imports */
-import { atualizaTextoEditor } from "./documento.js";
+import { atualizaTextoEditor,alertarERedirecionar } from "./documento.js";
 /* Variaveis */
 const socket = io();
 
@@ -12,11 +12,16 @@ function selecionarDocumento(nome) {
 function emitirTextoEditor(dados) {
     socket.emit('texto_editor', dados);
 }
-
 /* Metodo socket.on escutando texto editor clientes */
 socket.on('texto_editor_clientes', (texto) => {
     atualizaTextoEditor(texto);
 })
+function emitirExcluirDocumento(nomeDocumento){
+    socket.emit('excluir_documento', nomeDocumento);
+}
+socket.on('excluir_documento_sucesso',(nome) => {
+    alertarERedirecionar(nome);
+})
 
 /* export */
-export { emitirTextoEditor, selecionarDocumento };
+export { emitirTextoEditor, selecionarDocumento, emitirExcluirDocumento};
