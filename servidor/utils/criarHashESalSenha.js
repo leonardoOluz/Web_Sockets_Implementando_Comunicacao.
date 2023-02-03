@@ -1,4 +1,4 @@
-/* Import do modulo crypto do Node */
+/* Import do módulo crypto do Node */
 import {randomBytes, scryptSync } from 'crypto';
 
 /* Criando função para Sal e Hash de senhas */
