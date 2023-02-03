@@ -7,11 +7,10 @@ form.addEventListener('submit', (event) => {
     
     event.preventDefault();
 
-    const usuario = form['input-usuario'].value
+    const nome = form['input-usuario'].value
     const senha = form['input-senha'].value
-    console.log(`${usuario} / ${senha}`)  
 
-    emitirCadastrarUsuario({usuario, senha})
+    emitirCadastrarUsuario({nome, senha})
 
 
 })
