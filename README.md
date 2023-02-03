@@ -1,7 +1,7 @@
 # Projeto websockets NodeJs.
 
 ## ferramentas de desenvolvimento.
-`Projeto AluraDocs, neste projeto estamos usando o protocolo websockets para comunicação, com  o Node.js estamos usando os frameworks, express ^4.18.2,  drive mongodb 5.0 e socket.io ^4.5.4  `
+`Projeto AluraDocs, neste projeto estamos usando o protocolo websockets para comunicação e com o Node.js estamos usando os frameworks, express ^4.18.2,  drive mongodb 5.0 e socket.io ^4.5.4  `
 
 ## Sobre o projeto
 
