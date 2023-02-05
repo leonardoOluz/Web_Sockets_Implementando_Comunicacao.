@@ -8,7 +8,7 @@
 
 ### Descrição
 
-- Na página de login podemos acessar o sistema com os campos -nome de usuário e senha- após acesso com sucesso você é direcionado ao DashBoard
+- Na página de login podemos acessar o sistema com os campos -Usuário e Senha- após acesso com sucesso você é direcionado ao DashBoard
 - Se não ouver um login, existe um icone de cadastro na parte superior da página, você será redirecionado para página de cadastro, podemos criar um usuário novo e após o cadastro você é direcionado ao DashBoard 
 - Já na página de DashBoard você pode acessar os Documentos existentes ou criar um novo tópico.
 - Se acessar o tópico existente, na página direcionada, você tem um campo de textarea para conversar sobre o tema com outros usuários.
