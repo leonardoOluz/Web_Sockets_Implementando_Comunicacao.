@@ -1,12 +1,23 @@
 /* Imports */
-import { atualizaTextoEditor,alertarERedirecionar } from "./documento.js";
-/* Variaveis */
-const socket = io();
+import { obterCookie } from "../utils/cookies.js";
+import { atualizaTextoEditor, alertarERedirecionar } from "./documento.js";
+
+
+const socket = io('/usuarios', {
+    auth: {
+        token: obterCookie('tokenJwt')
+    }
+});
+
+socket.on('connect_error', (erro) => {
+    alert(erro)
+    window.location.href = '/login/index.html';
+})
 
 /* Funções */
 function selecionarDocumento(nome) {
     socket.emit('selecionar_documento', nome, (texto) => {
-        atualizaTextoEditor(texto)    
+        atualizaTextoEditor(texto)
     })
 }
 function emitirTextoEditor(dados) {
@@ -16,12 +27,12 @@ function emitirTextoEditor(dados) {
 socket.on('texto_editor_clientes', (texto) => {
     atualizaTextoEditor(texto);
 })
-function emitirExcluirDocumento(nomeDocumento){
+function emitirExcluirDocumento(nomeDocumento) {
     socket.emit('excluir_documento', nomeDocumento);
 }
-socket.on('excluir_documento_sucesso',(nome) => {
+socket.on('excluir_documento_sucesso', (nome) => {
     alertarERedirecionar(nome);
 })
 
 /* export */
-export { emitirTextoEditor, selecionarDocumento, emitirExcluirDocumento};
+export { emitirTextoEditor, selecionarDocumento, emitirExcluirDocumento };
