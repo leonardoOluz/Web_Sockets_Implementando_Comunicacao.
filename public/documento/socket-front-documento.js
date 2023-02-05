@@ -1,6 +1,6 @@
 /* Imports */
 import { obterCookie } from "../utils/cookies.js";
-import { atualizaTextoEditor, alertarERedirecionar } from "./documento.js";
+import { atualizaTextoEditor, alertarERedirecionar, tratarAutorizacaoSucesso } from "./documento.js";
 
 
 const socket = io('/usuarios', {
@@ -8,6 +8,7 @@ const socket = io('/usuarios', {
         token: obterCookie('tokenJwt')
     }
 });
+socket.on('autorizacao_sucesso', tratarAutorizacaoSucesso);
 
 socket.on('connect_error', (erro) => {
     alert(erro)
@@ -15,8 +16,9 @@ socket.on('connect_error', (erro) => {
 })
 
 /* Funções */
-function selecionarDocumento(nome) {
-    socket.emit('selecionar_documento', nome, (texto) => {
+
+function selecionarDocumento(dadosEntrada) {
+    socket.emit('selecionar_documento', dadosEntrada, (texto) => {
         atualizaTextoEditor(texto)
     })
 }
