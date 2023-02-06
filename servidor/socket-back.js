@@ -15,7 +15,7 @@ nspUsuarios.use(autorizarUsuario);
 nspUsuarios.on('connection', (socket) => {
     registrarEventosInicio(socket, nspUsuarios);
     registrarEventosDocumento(socket, nspUsuarios);
-    registrarEventosDesconectar(socket, nspUsuarios);  
+    // registrarEventosDesconectar(socket, nspUsuarios);  
 })
 
 io.of('/').on('connection', (socket) => {

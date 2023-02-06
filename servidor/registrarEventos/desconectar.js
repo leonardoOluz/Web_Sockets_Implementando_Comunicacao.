@@ -1,7 +1,8 @@
-function registrarEventosDesconectar(socket, io){
+import { removerConexao } from "../utils/conexoesDocumentos.js";
+
+function registrarEventosDesconectar(socket, io, {nomeDocumento, nomeUsuario} =''){
     socket.on("disconnect", (motivo) => {
-        // console.log(`Cliente "${socket.id}" desconectado!
-        // Motivo: ${motivo}`);
+        removerConexao(nomeDocumento,nomeUsuario)
     });
 }
 
